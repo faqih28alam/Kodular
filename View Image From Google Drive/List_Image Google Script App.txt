@@ -1,4 +1,4 @@
-function myFunction() {
+function doGet(e) {
   if ( e.parameter.func == "list_image"){
     var folder = DriveApp.getFolderById(e.parameter.FOLDER_ID);
     var files = folder.getFiles();
