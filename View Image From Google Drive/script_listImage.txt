@@ -1,0 +1,12 @@
+function doGet(e) {
+  if ( e.parameter.func = "list_image" ) {
+  var folder = DriveApp.getFolderById(e.parameter.ID_FOLDER);
+  var files = folder.getFiles();
+  var myList = "";
+  while(files.hasNext()) {
+    var file = files.next();
+    myList +=file.getName() + "," + file.getId() + "\n";
+    }
+  return ContentService.createTextOutput(myList).setMimeType(ContentService.MimeType.JSON);
+  }
+}
